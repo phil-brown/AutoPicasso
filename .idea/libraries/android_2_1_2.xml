@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android-2.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android/android/2.1.2/6642ce5db34ead3a9b4e6a9fd7b57c86544a942c/android-2.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android/android/2.1.2/9f2c404df26e395ace6e6ed1128a0b72af1136f3/android-2.1.2-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android/android/2.1.2/9f2c404df26e395ace6e6ed1128a0b72af1136f3/android-2.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

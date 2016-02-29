@@ -23,7 +23,6 @@ import static javax.lang.model.element.Modifier.PUBLIC;
 /**
  * Auto-Generation Class
  * <br>
- * Copyright 2016 <a href="http://www.ovenbits.com">Oven Bits</a>
  *
  * @author Phil Brown
  * @since 1:10 PM Feb 03, 2016

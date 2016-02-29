@@ -7,7 +7,6 @@ import io.github.phdbrown.autopicasso.annotations.Picasso;
 /**
  * Used to insert Picasso Request Creators into the Generated PicassoLoader class.
  * <br>
- * Copyright 2016 <a href="http://www.ovenbits.com">Oven Bits</a>
  *
  * @author Phil Brown
  * @since 11:00 AM Feb 04, 2016

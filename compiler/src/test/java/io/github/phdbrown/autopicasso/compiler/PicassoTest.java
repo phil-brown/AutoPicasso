@@ -15,7 +15,6 @@ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
 /**
  * TODO Description
  * <br>
- * Copyright 2016 <a href="http://www.ovenbits.com">Oven Bits</a>
  *
  * @author Phil Brown
  * @since 3:22 PM Feb 04, 2016

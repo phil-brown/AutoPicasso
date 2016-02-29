@@ -84,6 +84,5 @@
     <orderEntry type="library" exported="" scope="TEST" name="xercesMinimal-1.9.6.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="nekohtml-1.9.6.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="tools" level="project" />
-    <orderEntry type="library" exported="" name="compiler.compiler" level="project" />
   </component>
 </module>

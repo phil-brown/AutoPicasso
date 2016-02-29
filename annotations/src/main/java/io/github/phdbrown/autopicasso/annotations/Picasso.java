@@ -15,7 +15,6 @@ import java.lang.annotation.Target;
 /**
  * Picasso Annotation
  * <br>
- * Copyright 2016 <a href="http://www.ovenbits.com">Oven Bits</a>
  *
  * @author Phil Brown
  * @since 11:19 AM Feb 03, 2016

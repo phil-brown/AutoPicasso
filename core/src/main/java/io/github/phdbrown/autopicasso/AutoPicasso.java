@@ -14,7 +14,6 @@ import io.github.phdbrown.autopicasso.internal.PicassoLoader;
 /**
  * Loader. This is used to run the generated code from the Activity.
  * <br>
- * Copyright 2016 <a href="http://www.ovenbits.com">Oven Bits</a>
  *
  * @author Phil Brown
  * @since 8:10 AM Feb 04, 2016
