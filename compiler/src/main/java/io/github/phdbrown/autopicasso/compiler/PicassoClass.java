@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
+import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
@@ -32,6 +33,8 @@ final class PicassoClass {
     private static final ClassName LOADER = ClassName.get("io.github.phdbrown.autopicasso.internal", "PicassoLoader");
     private static final ClassName IMAGE_VIEW = ClassName.get("android.widget", "ImageView");
     private static final ClassName PICASSO = ClassName.get("com.squareup.picasso", "Picasso");
+    private static final ClassName BUILDER = ClassName.get(com.squareup.picasso.Picasso.Builder.class);
+    private static final ClassName LISTENER = ClassName.get(com.squareup.picasso.Picasso.Listener.class);
     private static final ClassName TRANSFORMATION = ClassName.get("com.squareup.picasso", "Transformation");
     private static final ClassName REQUEST_CREATOR = ClassName.get("com.squareup.picasso", "RequestCreator");
 
@@ -95,7 +98,12 @@ final class PicassoClass {
         //bind to the Activity's view
         //result.addStatement("activity.$L = view;//$T.class.cast(view)", binding.getName(), binding.getType().toString());//TODO does this work?
         //Now add the Picasso Code
-        result.addStatement("picasso = $T.with(activity)", PICASSO);
+        result.addCode(CodeBlock.builder().beginControlFlow("if (activity instanceof $T)", LISTENER)
+                .addStatement("picasso = new $T(activity).listener(($T) activity).build()", BUILDER, LISTENER)
+                .nextControlFlow("else")
+                .addStatement("picasso = $T.with(activity)", PICASSO)
+                .endControlFlow().build());
+
         String configuration = getConfigurationStatement(binding.getPicasso());
         if (configuration.length() > 0) {
             result.addStatement(configuration);
@@ -109,11 +117,11 @@ final class PicassoClass {
         StringBuilder builder = new StringBuilder();
         boolean hasEntry = false;
         if (picasso.log()) {
-            appendMethod(builder, "setLoggingEnabled");
+            appendMethod(builder, "setLoggingEnabled", true);
             hasEntry = true;
         }
         if (picasso.indicators()) {
-            appendMethod(builder, "setIndicatorsEnabled");
+            appendMethod(builder, "setIndicatorsEnabled", true);
             hasEntry = true;
         }
         if (hasEntry) {
